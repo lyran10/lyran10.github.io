@@ -1,0 +1,394 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* main board */
+
+.board{
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  position: relative;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.move{
+  position: relative;
+  bottom: 50px;
+  right: 20px;
+}
+
+.cell{
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width:150px;
+  border: solid black 3px;
+  background-color: #2a4380;
+}
+
+
+/* hover and the text inside the cell */
+
+.cell.x,
+.cell.o{
+  cursor: not-allowed;
+}
+
+.x::before,
+.board.x .cell:hover:not(.x):not(.o)::before{
+  position: absolute;
+  content: "×";
+  font-weight: 700;
+  font-size: 7em;
+  color: white;
+}
+
+.o::before,
+.board.o .cell:hover:not(.x):not(.o)::before{
+  position: absolute;
+  content: "○";
+  font-weight: 900;
+  font-size: 8em;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.x::before{
+  position: absolute;
+  content: "×";
+  font-size: 7em;
+  font-weight: 700;
+  color: white;
+}
+
+.o::before{
+  position: absolute;
+  content: "○";
+  font-weight: 900;
+  font-size: 8em;
+  margin-bottom: 30px;
+  color: white;
+}
+
+
+/* div that will appear after someone wins or before the game starts */
+.winner{
+  display: none;
+  position: fixed;
+   right: 0;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   background-color: rgba(0,0,0, .9 );
+   justify-content: center;
+   align-items: center;
+   color: white;
+   font-size: 3rem;
+   flex-direction: column
+  }
+
+  .winner_msg{
+    text-align: center;
+  }
+
+  #btn1{
+    display: none;
+  }
+
+  .display{
+    display: none;
+  }
+
+  .visibile{
+    visibility: visible;
+  }
+
+  .btn{
+    cursor: pointer;
+  }
+
+  /* when show class is add then is will show the div  with the winner class */
+  .winner.show{
+    display: flex;
+  }
+
+  /* section to select the which match want to play single or best of three */
+ .choose{
+  position: relative;
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color:rgba(250, 250, 250, 0.973);
+  justify-content: center;
+  align-items: center;
+  color:white;
+ }
+
+ .container{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  transition:1s cubic-bezier(0, 1.53, 0.58, 1);
+}
+
+/* .new_names{
+  position: absolute;
+  top: 500px;
+
+} */
+
+ .box{
+  top: 50px;
+  display: none;
+  border-radius:20px;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 200px;
+  background-color: rgba(0,0,0,0.5);
+  flex-direction: column;
+  gap: 50px;
+  transition:all 2s;
+}
+
+
+.box{
+  transform: translateY(-50deg);
+}
+
+
+.choose.show1{
+  display: flex;
+}
+
+.box.box1{
+  display: flex;
+}
+
+/* header for the best of 3 */
+
+.header{
+  display: none;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background-color: black;
+}
+
+
+.header.show-header{
+  display: flex;
+}
+
+.cont{
+  align-items: center;
+}
+
+
+
+
+/* media query */
+
+@media all and (min-width: 1024px) and (max-width: 1280px) { 
+  
+}
+
+@media all and (min-width: 768px) and (max-width: 1180px) { 
+  
+  /* .translate{
+    transform: translateX(800px);
+  } */
+
+}
+
+ 
+@media all and (min-width: 480px) and (max-width: 720px) {
+/* front page */
+.container{
+  position: static;
+  right: 200px;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.box{
+  height: 250px;
+  gap: 20px;
+}
+
+/* .select-arcade{
+  transform: translateY(0);
+  transition: 0;
+}
+
+.translate{
+  transform: translateX(0);
+} */
+
+
+/* board */
+.board{
+  grid-template-columns: 80px 80px 80px;
+  margin-left: 15px;
+  margin-bottom: 50px;
+}
+
+.cell{
+  height: 80px;
+  width: 80px;
+}
+
+.x::before{
+  font-size: 6em;
+  margin-bottom: 5px;
+}
+
+.o::before{
+  font-size: 6em;
+  margin-bottom: 15px;
+}
+
+.x::before,
+.board.x .cell:hover:not(.x):not(.o)::before{
+  font-size: 6em;
+  margin-bottom: 5px;
+}
+
+.o::before,
+.board.o .cell:hover:not(.x):not(.o)::before{
+  font-size: 6em;
+  margin-bottom: 15px;
+}
+
+}
+
+@media all and (max-width: 480px) {
+
+/* front page */
+.container{
+  position: static;
+  right: 200px;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.box{
+  height: 250px;
+  gap: 20px;
+}
+
+.arcade-heading{
+  position: fixed;
+  bottom: 630px;
+}
+
+
+/* board */
+  .board{
+    grid-template-columns: 80px 80px 80px;
+    margin-left: 15px;
+    margin-bottom: 50px;
+  }
+  
+  .cell{
+    height: 80px;
+    width: 80px;
+  }
+  
+  .x::before{
+    font-size: 6em;
+    margin-top: 5px;
+  }
+  
+  .o::before{
+    font-size: 6em;
+    margin-bottom: 15px;
+    }
+
+.x::before,
+.board.x .cell:hover:not(.x):not(.o)::before{
+  font-size: 6em; 
+  margin-bottom: 5px; 
+}
+
+.o::before,
+.board.o .cell:hover:not(.x):not(.o)::before{
+  font-size: 6em;
+  margin-bottom: 15px;
+}
+
+
+}
+@media all and (min-width: 280px) and (max-width: 480px) {
+  .board{
+    grid-template-columns: 60px 60px 60px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+  }
+  
+  .cell{
+    height: 60px;
+    width: 60px;
+  }
+  
+  .x::before{
+    font-size: 4em;
+    margin-top: 5px;
+  }
+  
+  .o::before{
+    font-size: 4em;
+    margin-bottom: 15px;
+    }
+
+.x::before,
+.board.x .cell:hover:not(.x):not(.o)::before{
+  font-size: 4em; 
+  margin-bottom: 5px; 
+}
+
+.o::before,
+.board.o .cell:hover:not(.x):not(.o)::before{
+  font-size: 4em;
+  margin-bottom: 15px;
+}
+}
+
+
+
+ 
+ 
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+ 
