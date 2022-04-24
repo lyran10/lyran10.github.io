@@ -140,15 +140,10 @@
  .container{
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 100px;
-  transition:1s cubic-bezier(0, 1.53, 0.58, 1);
 }
 
-/* .new_names{
-  position: absolute;
-  top: 500px;
-
-} */
 
  .box{
   top: 50px;
@@ -161,7 +156,6 @@
   background-color: rgba(0,0,0,0.5);
   flex-direction: column;
   gap: 50px;
-  transition:all 2s;
 }
 
 
@@ -189,6 +183,18 @@
   background-color: black;
 }
 
+span{
+position: absolute;
+margin-left: auto;
+margin-right: auto;
+margin-top: auto;
+margin-bottom: auto;
+left: 0;
+right: 5px;
+bottom:100px ;
+text-align: center;
+}
+
 
 .header.show-header{
   display: flex;
@@ -203,20 +209,14 @@
 
 /* media query */
 
-@media all and (min-width: 1024px) and (max-width: 1280px) { 
-  
-}
 
-@media all and (min-width: 768px) and (max-width: 1180px) { 
+@media all and (min-width: 768px) and (max-width: 1024px) { 
   
-  /* .translate{
-    transform: translateX(800px);
-  } */
 
 }
 
  
-@media all and (min-width: 480px) and (max-width: 720px) {
+@media all and (min-width: 480px) and (max-width: 768px) {
 /* front page */
 .container{
   position: static;
@@ -232,14 +232,9 @@
   gap: 20px;
 }
 
-/* .select-arcade{
-  transform: translateY(0);
-  transition: 0;
+span {
+  top: 700px;
 }
-
-.translate{
-  transform: translateX(0);
-} */
 
 
 /* board */
@@ -300,6 +295,10 @@
   bottom: 630px;
 }
 
+span {
+  top: 700px;
+}
+
 
 /* board */
   .board{
@@ -337,7 +336,7 @@
 
 
 }
-@media all and (min-width: 280px) and (max-width: 480px) {
+@media all and (max-width: 280px) {
   .board{
     grid-template-columns: 60px 60px 60px;
     margin-left: 10px;
@@ -370,7 +369,7 @@
   font-size: 4em;
   margin-bottom: 15px;
 }
-}
+} 
 
 
 
